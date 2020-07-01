@@ -1,0 +1,27 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+  
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <font face="channel ">Patelerias LAINNE</font>
+      </div>
+  
+      <form [formGroup]="formLogin">
+        <p>
+          <input type="text" class="fadeIn second" formControlName="usuario" placeholder="Usuario">
+        </p>
+        <p>
+          <input type="password" class="fadeIn third" formControlName="contrasena" placeholder="Contraseña">
+        </p>
+        <input type="submit" (click)="login()" [disabled]="!formLogin.valid" class="fadeIn fourth" value="Iniciar Sesión">
+           </form>
+  
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="#">Forgot Password?</a>
+      </div>
+      
+    </div>
+  </div>
+  
