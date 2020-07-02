@@ -1,0 +1,43 @@
+.banner{
+  width: 100%;
+}
+.info{
+  border-style: solid;
+  border-width: 7px;
+  border-color: rgba(208, 204, 204, 0.45);
+  background-color: white;
+  position: absolute;
+  top: 65%;
+  left: 10%;
+  right: 10%;
+  width: 80%;
+  height: 50%;
+}
+.info h3{
+  color: #D762CF;
+  font-size: 30px;
+  margin: 0 auto;
+  text-align: center;
+}
+.info p{
+  color: rgba(112, 112, 112, 0.82);
+  font-family: "Segoe UI";
+  font-size: 16px;
+  margin: 0 auto;
+  text-align: center;
+}
+.info h2{
+  position: absolute;
+  top: 120%;
+  right: 30%;
+  left: 30%;
+  color: rgba(112, 112, 112, 0.9);
+  font-family: "Segoe UI";
+  font-size: 50px;
+  text-align: center;
+}
+
+.info img{
+  height: 30%;
+  width: auto;
+}

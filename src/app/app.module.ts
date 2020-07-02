@@ -4,10 +4,16 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FooterComponent} from './footer/footer.component';
+import { NavbarComponent} from './navbar/navbar.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FooterComponent,
+    NavbarComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,
