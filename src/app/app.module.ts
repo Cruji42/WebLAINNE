@@ -8,6 +8,7 @@ import { FooterComponent} from './footer/footer.component';
 import { NavbarComponent} from './navbar/navbar.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
