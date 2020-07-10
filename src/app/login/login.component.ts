@@ -10,36 +10,36 @@ import { WsService} from '../services';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  public formLogin: FormGroup;
+  // public formLogin: FormGroup;
   constructor(private formBuilder: FormBuilder, public ws: WsService, public router: Router) {
-    this.formulario();
+    // this.formulario();
   }
 
   ngOnInit(): void {
   }
 
-  formulario(){
-    this.formLogin = this.formBuilder.group({
-      usuario: ['', Validators.required],
-      contrasena: ['', Validators.required]
-    });
-  }
+  // formulario(){
+  //   this.formLogin = this.formBuilder.group({
+  //     usuario: ['', Validators.required],
+  //     contrasena: ['', Validators.required]
+  //   });
+  // }
 
-  login(){
-    const provider = this.formLogin.value;
-    // console.log(this.formLogin.value.usuario);
-    //  console.log(provider);
-    this.ws.WS_LOGIN(provider).subscribe(data => {
-      console.log(data);
-      if (data[' success '] === 1){
-        localStorage.setItem('token', data['token ']);
-        localStorage.setItem('iniciado', 'true');
-        console.log('Logeado');
-      }else{
-        console.log('Error de Credenciales');
-      }
-    });
-
-  }
+  // login(){
+  //   const provider = this.formLogin.value;
+  //   // console.log(this.formLogin.value.usuario);
+  //   //  console.log(provider);
+  //   this.ws.WS_LOGIN(provider).subscribe(data => {
+  //     console.log(data);
+  //     if (data[' success '] === 1){
+  //       localStorage.setItem('token', data['token ']);
+  //       localStorage.setItem('iniciado', 'true');
+  //       console.log('Logeado');
+  //     }else{
+  //       console.log('Error de Credenciales');
+  //     }
+  //   });
+  //
+  // }
 
 }

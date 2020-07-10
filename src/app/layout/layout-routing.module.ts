@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CakeMakerComponent} from './cake-maker/cake-maker.component';
+import {LayoutComponent} from './layout.component';
 
 
 const routes: Routes = [{
-  // path: '', component: CakeMakerComponent,
+  path: '', component: LayoutComponent,
   children: [
     {path: '', redirectTo: 'cakemaker', pathMatch: 'prefix'},
-    {path: 'cakemaker', component: CakeMakerComponent}
+    {path: 'cakemaker', loadChildren: () => import('./cake-maker/cake-maker.module').then(
+        (m) => m.CakeMakerModule
+      )}
   ]
 }];
 

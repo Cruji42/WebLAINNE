@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { FooterComponent} from './footer/footer.component';
 import { NavbarComponent} from './navbar/navbar.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import {AuthGuard} from './shared/guard';
+import { CatalogComponent } from './catalog/catalog.component';
 
 
 @NgModule({
@@ -14,14 +16,15 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     AppComponent,
     FooterComponent,
     NavbarComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    CatalogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

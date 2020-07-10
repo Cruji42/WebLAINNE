@@ -1,9 +1,9 @@
 .footer {
   width: 100%;
   height: auto;
-  background-color: rgba(208, 204, 204, 0.18);
+  background-color: #F7F6F6;
   position: fixed;
-  bottom: 0;
+  bottom: 0%;
 }
 
 h2{
