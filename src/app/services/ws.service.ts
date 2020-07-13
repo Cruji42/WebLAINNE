@@ -7,7 +7,7 @@ export class WsService {
   constructor(public http: HttpClient) {
   }
   WS_LOGIN(data){
-    return this.http.post('http://localhost/ws-p1/api_login.php', data);
+    return this.http.post('http://localhost/services/api_login.php', data);
   }
  }
 

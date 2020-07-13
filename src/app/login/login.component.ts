@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
 
   formulario(){
     this.formLogin = this.formBuilder.group({
-      usuario: ['', Validators.required],
+      correo: ['', Validators.required],
       contrasena: ['', Validators.required]
     });
   }
@@ -31,10 +31,11 @@ export class LoginComponent implements OnInit {
     //  console.log(provider);
     this.ws.WS_LOGIN(provider).subscribe(data => {
       console.log(data);
-      if (data[' success '] === 1){
-        localStorage.setItem('token', data['token ']);
+      if (data['success'] === 1){
+        localStorage.setItem('token', data['token']);
         localStorage.setItem('iniciado', 'true');
         console.log('Logeado');
+        this.router.navigate(['/dashboard']);
       }else{
         console.log('Error de Credenciales');
       }
