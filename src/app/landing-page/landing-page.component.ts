@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WsService} from '../services';
 
 @Component({
   selector: 'app-landing-page',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent implements OnInit {
-
-  constructor() { }
+  products: any;
+  constructor(public WS: WsService) {
+  }
 
   ngOnInit(): void {
+    this.getProducts();
   }
+getProducts(){
+  this.WS.Get_Main_Products().subscribe(data => {
+    this.products = data;
+    console.log(this.products);
+  }, error => {
+    console.log(error);
+  });
+}
 
 }

@@ -1,0 +1,35 @@
+.about{
+  position: absolute;
+  top: 60%;
+  left: 27%;
+  right: 27%;
+  font-size: 5em;
+  color: #FFFFFF;
+  font-family: "Palatino Linotype";
+}
+.title{
+  font-size: 5em;
+  color: #FE9CC5;
+  font-family: "Palatino Linotype";
+}
+.description{
+  position: absolute;
+  left: 30%;
+  right: 30%;
+}
+
+.description hr{
+  width: 20%;
+  height: 2px;
+  background-color: #EC9EB1;
+}
+.description2{
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  right: 5%;
+}
+.responsive {
+  width: 100%;
+  height: auto;
+}

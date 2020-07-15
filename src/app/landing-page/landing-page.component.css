@@ -41,3 +41,26 @@
   height: 30%;
   width: auto;
 }
+
+.cards{
+  position: absolute;
+  top: 120%;
+  left: 10%;
+  right: 10%;
+}
+
+span {
+  display: inline-block;
+  width: 180px;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}
+
+h6 {
+  display: inline-block;
+  width: 190px;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}

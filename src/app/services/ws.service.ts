@@ -6,8 +6,15 @@ import { HttpClient} from '@angular/common/http';
 export class WsService {
   constructor(public http: HttpClient) {
   }
-  WS_LOGIN(data){
-    return this.http.post('http://localhost/ws-p1/api_login.php', data);
+
+  Get_Main_Products(){
+    return this.http.get('http://localhost/LAINNE/Get_Best_Products.php');
+  }
+  Login(data){
+    return this.http.post('http://localhost/LAINNE/Login.php', data);
+  }
+  Get_Products(){
+    return this.http.get('http://localhost/LAINNE/Get_Products.php');
   }
  }
 

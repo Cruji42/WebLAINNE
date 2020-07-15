@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CakeMakerComponent} from './cake-maker.component';
+import { CakemakerComponent} from './cakemaker.component';
 
 
 const routes: Routes = [{
-  path: '', component: CakeMakerComponent
+  path: '', component: CakemakerComponent
 }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class CakeMakerRoutingModule { }
+export class CakemakerRoutingModule { }

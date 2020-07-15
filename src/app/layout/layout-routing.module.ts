@@ -7,8 +7,8 @@ const routes: Routes = [{
   path: '', component: LayoutComponent,
   children: [
     {path: '', redirectTo: 'cakemaker', pathMatch: 'prefix'},
-    {path: 'cakemaker', loadChildren: () => import('./cake-maker/cake-maker.module').then(
-        (m) => m.CakeMakerModule
+    {path: 'cakemaker', loadChildren: () => import('./cakemaker/cakemaker.module').then(
+        (m) => m.CakemakerModule
       )}
   ]
 }];
