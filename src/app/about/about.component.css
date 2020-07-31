@@ -1,13 +1,15 @@
 .about{
+  text-align: center;
   position: absolute;
-  top: 60%;
+  top: 30%;
   left: 27%;
   right: 27%;
-  font-size: 5em;
+  font-size: 4em;
   color: #FFFFFF;
   font-family: "Palatino Linotype";
 }
 .title{
+  text-align: center;
   font-size: 5em;
   color: #FE9CC5;
   font-family: "Palatino Linotype";
@@ -24,12 +26,12 @@
   background-color: #EC9EB1;
 }
 .description2{
+  text-align: center;
   position: absolute;
-  width: 90%;
-  left: 5%;
-  right: 5%;
-}
+  
+  }
 .responsive {
   width: 100%;
   height: auto;
 }
+

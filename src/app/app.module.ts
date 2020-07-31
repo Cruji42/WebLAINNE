@@ -11,6 +11,7 @@ import { CatalogComponent } from './catalog/catalog.component';
 import { ReactiveFormsModule} from '@angular/forms';
 import { FormsModule} from '@angular/forms';
 import { AboutComponent } from './about/about.component';
+import { RegistrarComponent } from './registrar/registrar.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { AboutComponent } from './about/about.component';
     NavbarComponent,
     LandingPageComponent,
     CatalogComponent,
-    AboutComponent
+    AboutComponent,
+    RegistrarComponent
   ],
   imports: [
     BrowserModule,

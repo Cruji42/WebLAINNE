@@ -4,6 +4,7 @@ import { LoginComponent} from './login/login.component';
 import { LandingPageComponent} from './landing-page/landing-page.component';
 import { CatalogComponent} from './catalog/catalog.component';
 import { AboutComponent} from './about/about.component';
+import { RegistrarComponent} from './registrar/registrar.component';
 import { AuthGuard} from './shared/guard';
 
 
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'home', component: LandingPageComponent },
   { path: 'about', component: AboutComponent},
   { path: '', component: LandingPageComponent },
+  { path: 'registrar', component: RegistrarComponent }
 ];
 
 
