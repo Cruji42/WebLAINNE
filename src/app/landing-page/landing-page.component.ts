@@ -7,6 +7,7 @@ import { WsService} from '../services';
   styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent implements OnInit {
+  response: any;
   products: any;
   constructor(public WS: WsService) {
   }
@@ -16,8 +17,10 @@ export class LandingPageComponent implements OnInit {
   }
 getProducts(){
   this.WS.Get_Main_Products().subscribe(data => {
-    this.products = data;
-    console.log(this.products);
+    this.response = data;
+    // this.products = this.response.body[0];
+    // console.log(this.response.body[0]);
+    this.products = [this.response.body[0], this.response.body[1], this.response.body[2]];
   }, error => {
     console.log(error);
   });

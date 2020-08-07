@@ -8,6 +8,7 @@ import { WsService} from '../services';
 })
 export class CatalogComponent implements OnInit {
   products: any;
+  response: any;
   constructor(public WS: WsService) {
     this.getProducts();
   }
@@ -17,7 +18,8 @@ export class CatalogComponent implements OnInit {
 
   getProducts(){
     this.WS.Get_Products().subscribe(data => {
-      this.products = data;
+      this.response = data;
+      this.products = this.response.body;
       console.log(this.products);
     }, error => {
       console.log(error);

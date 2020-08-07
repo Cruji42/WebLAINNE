@@ -11,6 +11,7 @@ import { WsService} from '../services';
 })
 export class RegistrarComponent implements OnInit {
   public formRegistrar: FormGroup;
+  response: any;
   constructor(private formBuilder: FormBuilder, public ws: WsService, public router: Router) {
   this.formulario();
   }
@@ -20,13 +21,13 @@ export class RegistrarComponent implements OnInit {
 
   formulario(){
     this.formRegistrar = this.formBuilder.group({
-      Nombre: [ '', Validators.required],
-      Apellido: [ '', Validators.required],
-      Telefono: [ '', Validators.required],
-      Direccion: [ '', Validators.required],
-      Ciudad: [ '', Validators.required],
-      Correo: [ '', Validators.required],
-      Contrasena: ['', Validators.required]
+      Name: [ '', Validators.required],
+      LastName: [ '', Validators.required],
+      Telephone: [ '', Validators.required],
+      Address: [ '', Validators.required],
+      City: [ '', Validators.required],
+      Mail: [ '', Validators.required],
+      Password: ['', Validators.required]
     });
   }
 
@@ -34,12 +35,17 @@ export class RegistrarComponent implements OnInit {
     const provider = this.formRegistrar.value;
     console.log(provider);
     this.ws.ws_create(provider).subscribe(data => {
-      console.log(data);
-      if (data['success'] === 1){
+      this.response = data;
+      console.log(this.response.status_code_header);
+      if (this.response.status_code_header === 'HTTP/1.1 201 Created'){
         alert('registrado');
+        this.router.navigate(['login']);
       }else{
         alert('no registrado');
       }
     });
+  }
+  cancel(){
+        this.router.navigate(['login']);
   }
 }

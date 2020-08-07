@@ -16,14 +16,14 @@
         <div class="form-row">
          <div class="col-sm-12" class="form-group">
             <label for="nombre" class="firstname">Nombre :</label>
-            <input type="text" formControlName="Nombre" name="nombre" id="nombre" placeholder="Nombre" class="form-control ">
+            <input type="text" formControlName="Name" name="nombre" id="nombre" placeholder="Nombre" class="form-control ">
         </div>
     </div>
            
          <div class="form-row">
             <div class="col-sm-12" class="form-group">
                 <label for="apellido" class="firstname">Apellido :</label>            
-                <input type="text" formControlName="Apellido" name="apellido" id="apellido" placeholder="Apellido" class="form-control last">
+                <input type="text" formControlName="LastName" name="apellido" id="apellido" placeholder="Apellido" class="form-control last">
             </div>
         </div>
        
@@ -31,7 +31,7 @@
             <div class="form-row">
                 <div class="col-sm-12" class="form-group">        
                     <label for="telefono" class="firstname">Telefono :</label>
-                    <input type="text" formControlName="Telefono" name="telefono"  id="telefono"placeholder="Telefono" class="form-control" >
+                    <input type="text" formControlName="Telephone" name="telefono"  id="telefono"placeholder="Telefono" class="form-control" >
                 </div>
             </div>
        
@@ -39,7 +39,7 @@
      <div class="form-row">
         <div class="col-sm-12" class="form-group">            
             <label for="direccion" class="firstname">Direccion :</label>
-                <input type="text" formControlName="Direccion" name="direccion"  id="direccion" placeholder="Direccion" class="form-control" >
+                <input type="text" formControlName="Address" name="direccion"  id="direccion" placeholder="Direccion" class="form-control" >
         </div>
      </div>
     
@@ -48,7 +48,7 @@
         <div class="col-sm-12" class="form-group">
             
             <label for="ciudad" class="firstname">Ciudad :</label>
-            <input type="text" formControlName="Ciudad" name="ciudad"  id="ciudad" placeholder="Ciudad" class="form-control" >
+            <input type="text" formControlName="City" name="ciudad"  id="ciudad" placeholder="Ciudad" class="form-control" >
         </div>
      </div>
     
@@ -57,7 +57,7 @@
         <div class="col-sm-12" class="form-group">
             
             <label for="correo" class="firstname">Correa :</label>
-            <input type="email" formControlName="Correo" name="correo"  id="correo" placeholder="Correo" class="form-control" >
+            <input type="email" formControlName="Mail" name="correo"  id="correo" placeholder="Correo" class="form-control" >
         </div>
      </div>
     
@@ -66,17 +66,17 @@
         <div class="col-sm-12" class="form-group">
             
             <label for="contrasena" class="firstname">Contraseña :</label>
-            <input type="password" formControlName="Contrasena" name="contrasena" id="contrasena" placeholder="Enter your Password" class="form-control">
+            <input type="password" formControlName="Password" name="contrasena" id="contrasena" placeholder="Enter your Password" class="form-control">
         </div>
      </div>
 	<br>
 	    <div class="col-sm-12">
-		    <button class="btn btn-warning"  (click) = "registrar_usuario()" >Submit</button>           
+		    <button class="btn btn-warning"  (click) = "registrar_usuario()" >Submit</button>
+        <button class="btn btn-warning"  (click) = "cancel()" >Cancelar</button>
         </div>
    
 	 </form>		 		  
     </div>
     </body>		
 </html>
-	 
 	 
