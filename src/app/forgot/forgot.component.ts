@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-forgot',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForgotComponent implements OnInit {
 
-  constructor() { }
+  constructor( public router: Router) { }
+
+  enviarMail(email){
+    console.log(email);
+  }
+
+  login(){
+    this.router.navigate(['login']);
+  }
 
   ngOnInit(): void {
   }
