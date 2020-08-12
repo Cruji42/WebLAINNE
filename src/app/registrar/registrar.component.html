@@ -1,3 +1,101 @@
+<div id="login" class="log_back" >
+  <div class="card">
+    <div class="card-body ">
+      <br>
+      <div id="login-row" class="row justify-content-center align-items-center">
+        <div id="login-column" class="col-md-6">
+          <div id="login-box" class="col-md-12">
+            <form id="login-form" class="form">
+
+              <h2 class="text-center text-info letter">𝒫𝒶𝓈𝓉𝑒𝓁𝑒𝓇í𝒶 𝐿𝒜𝐼𝒩𝒩𝐸</h2>
+              <h5 class="text-center text-info letter" style="font-family: 'Apple Color Emoji'; padding-top: 10px"> R E G I S T R O</h5>
+              <div class="form-group" style="padding-top: 10px">
+                <label for="username" class="text-info letter">Correo:</label><br>
+                <input type="email" #email name="email" id="username" class="form-control"  >
+              </div>
+            <!--  <div class="form-group">
+                <label for="password"   class="text-info letter">Contraseña:</label><br>
+                <input type="password" #pass name="password" id="password" class="form-control">
+              </div>
+
+              <div class="form-row">
+                <div class="col-sm-12" class="form-group">
+                  <label for="nombre" class="firstname">Nombre :</label>
+                  <input type="text" formControlName="Name" name="nombre" id="nombre" placeholder="Nombre" class="form-control ">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="col-sm-12" class="form-group">
+                  <label for="apellido" class="firstname">Apellido :</label>
+                  <input type="text" formControlName="LastName" name="apellido" id="apellido" placeholder="Apellido" class="form-control last">
+                </div>
+              </div>
+
+              &lt;!&ndash;-&#45;&#45;For Number&#45;&#45;&ndash;&gt;
+              <div class="form-row">
+                <div class="col-sm-12" class="form-group">
+                  <label for="telefono" class="firstname">Telefono :</label>
+                  <input type="text" formControlName="Telephone" name="telefono"  id="telefono"placeholder="Telefono" class="form-control" >
+                </div>
+              </div>
+
+              &lt;!&ndash;-&#45;&#45;For direction&#45;&#45;&ndash;&gt;
+              <div class="form-row">
+                <div class="col-sm-12" class="form-group">
+                  <label for="direccion" class="firstname">Direccion :</label>
+                  <input type="text" formControlName="Address" name="direccion"  id="direccion" placeholder="Direccion" class="form-control" >
+                </div>
+              </div>
+
+              &lt;!&ndash;-&#45;&#45;For city&#45;&#45;&ndash;&gt;
+              <div class="form-row">
+                <div class="col-sm-12" class="form-group">
+
+                  <label for="ciudad" class="firstname">Ciudad :</label>
+                  <input type="text" formControlName="City" name="ciudad"  id="ciudad" placeholder="Ciudad" class="form-control" >
+                </div>
+              </div>
+
+              &lt;!&ndash;-&#45;&#45;For email&#45;&#45;&ndash;&gt;
+              <div class="form-row">
+                <div class="col-sm-12" class="form-group">
+
+                  <label for="correo" class="firstname">Correa :</label>
+                  <input type="email" formControlName="Mail" name="correo"  id="correo" placeholder="Correo" class="form-control" >
+                </div>
+              </div>
+
+              &lt;!&ndash;-&#45;&#45;For Password and confirm password&#45;&#45;&ndash;&gt;
+              <div class="form-row">
+                <div class="col-sm-12" class="form-group">
+
+                  <label for="contrasena" class="firstname">Contraseña :</label>
+                  <input type="password" formControlName="Password" name="contrasena" id="contrasena" placeholder="Enter your Password" class="form-control">
+                </div>
+              </div>-->
+
+              <div class="form-group">
+                <input type="button" class="btn btn-info btn-md enter-button" value="Entrar">
+              </div>
+              <p id="forgot-link " class="text-center ">
+                <span class="letter"> ¿Olvidaste tu contraseña? </span> <a href="forgot" class="text-info letter"  > Recuperar</a>
+              </p>
+              <p id="register-link " class="text-center ">
+                <span class="letter" > ¿Aun no tienes cuenta? </span> <a href="registrar" class="text-info letter"  > Registrate</a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!--
+
 <!Doctype html>
 <html>
 <head>
@@ -6,65 +104,65 @@
 
 </head>
 <body>
- <!---heading---->
+ &lt;!&ndash;-heading&#45;&#45;&ndash;&gt;
      <header class="heading" > 𝒫𝒶𝓈𝓉𝑒𝓁𝑒𝓇í𝒶 𝐿𝒜𝐼𝒩𝒩𝐸</header>
-	<!---Form starting----> 
-    <div class="center">    
-     
+	&lt;!&ndash;-Form starting&#45;&#45;&ndash;&gt;
+    <div class="center">
+
     <form  [formGroup]="formRegistrar">
-     <!--- For Name---->
+     &lt;!&ndash;- For Name&#45;&#45;&ndash;&gt;
         <div class="form-row">
          <div class="col-sm-12" class="form-group">
             <label for="nombre" class="firstname">Nombre :</label>
             <input type="text" formControlName="Name" name="nombre" id="nombre" placeholder="Nombre" class="form-control ">
         </div>
     </div>
-           
+
          <div class="form-row">
             <div class="col-sm-12" class="form-group">
-                <label for="apellido" class="firstname">Apellido :</label>            
+                <label for="apellido" class="firstname">Apellido :</label>
                 <input type="text" formControlName="LastName" name="apellido" id="apellido" placeholder="Apellido" class="form-control last">
             </div>
         </div>
-       
-        <!-----For Number---->
+
+        &lt;!&ndash;-&#45;&#45;For Number&#45;&#45;&ndash;&gt;
             <div class="form-row">
-                <div class="col-sm-12" class="form-group">        
+                <div class="col-sm-12" class="form-group">
                     <label for="telefono" class="firstname">Telefono :</label>
                     <input type="text" formControlName="Telephone" name="telefono"  id="telefono"placeholder="Telefono" class="form-control" >
                 </div>
             </div>
-       
-     <!-----For direction---->
+
+     &lt;!&ndash;-&#45;&#45;For direction&#45;&#45;&ndash;&gt;
      <div class="form-row">
-        <div class="col-sm-12" class="form-group">            
+        <div class="col-sm-12" class="form-group">
             <label for="direccion" class="firstname">Direccion :</label>
                 <input type="text" formControlName="Address" name="direccion"  id="direccion" placeholder="Direccion" class="form-control" >
         </div>
      </div>
-    
-     <!-----For city---->
+
+     &lt;!&ndash;-&#45;&#45;For city&#45;&#45;&ndash;&gt;
      <div class="form-row">
         <div class="col-sm-12" class="form-group">
-            
+
             <label for="ciudad" class="firstname">Ciudad :</label>
             <input type="text" formControlName="City" name="ciudad"  id="ciudad" placeholder="Ciudad" class="form-control" >
         </div>
      </div>
-    
-     <!-----For email---->
+
+     &lt;!&ndash;-&#45;&#45;For email&#45;&#45;&ndash;&gt;
      <div class="form-row">
         <div class="col-sm-12" class="form-group">
-            
+
             <label for="correo" class="firstname">Correa :</label>
             <input type="email" formControlName="Mail" name="correo"  id="correo" placeholder="Correo" class="form-control" >
         </div>
      </div>
-    
-	 <!-----For Password and confirm password---->
+
+	 &lt;!&ndash;-&#45;&#45;For Password and confirm password&#45;&#45;&ndash;&gt;
      <div class="form-row">
         <div class="col-sm-12" class="form-group">
-            
+
             <label for="contrasena" class="firstname">Contraseña :</label>
             <input type="password" formControlName="Password" name="contrasena" id="contrasena" placeholder="Enter your Password" class="form-control">
         </div>
@@ -74,9 +172,10 @@
 		    <button class="btn btn-warning"  (click) = "registrar_usuario()" >Submit</button>
         <button class="btn btn-warning"  (click) = "cancel()" >Cancelar</button>
         </div>
-   
-	 </form>		 		  
+
+	 </form>
     </div>
-    </body>		
+    </body>
 </html>
-	 
+-->
+
