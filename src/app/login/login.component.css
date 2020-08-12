@@ -8,6 +8,23 @@
   border-radius: 50px;
 }
 
+.log_back{
+  position: absolute;
+  width: 100% !important;
+  /*border-radius: 10px;*/
+  height: 100% !important;
+  /* The image used */
+  background-image: url("../../assets/img/login_pastel.jpg");
+  opacity: 0.8;
+
+
+  /* Center and scale the image nicely */
+  /*background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;*/
+
+}
+
 .card img {
   width: 50%;
   height: auto;
@@ -68,6 +85,25 @@ button[type=button] {
   cursor: pointer;
 }
 
+.letter{
+  color: #D762CF !important;
+}
+.enter-button{
+  width: 100%;
+  color: white;
+  background: #D762CF;
+  border-color: #D762CF;
+  border-radius: 5px;
+  border: solid;
+}
+.enter-button:hover{
+  background: white;
+  color: #D762CF;
+  border-color: #e585df;
+  border-radius: 5px;
+  border: solid;
+}
+
 button[type=button]:hover {
   background-color: #EC9EB1;
 }
@@ -76,6 +112,10 @@ button[type=button]:hover {
   background: #FFFFFF;
   border-color: #EC9EB1;
   margin-bottom: 5px;
+}
+a:hover{
+  color: #D762CF !important;
+  font-size: 18px;
 }
 
 .container-error-message{

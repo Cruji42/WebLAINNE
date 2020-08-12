@@ -12,6 +12,7 @@ import { ReactiveFormsModule} from '@angular/forms';
 import { FormsModule} from '@angular/forms';
 import { AboutComponent } from './about/about.component';
 import { RegistrarComponent } from './registrar/registrar.component';
+import { ForgotComponent } from './forgot/forgot.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { RegistrarComponent } from './registrar/registrar.component';
     LandingPageComponent,
     CatalogComponent,
     AboutComponent,
-    RegistrarComponent
+    RegistrarComponent,
+    ForgotComponent
   ],
   imports: [
     BrowserModule,
