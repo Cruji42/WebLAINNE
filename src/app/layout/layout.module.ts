@@ -9,7 +9,7 @@ import { ProfileComponent } from './profile/profile.component';
 @NgModule({
   declarations: [
     LayoutComponent,
-    ProfileComponent
+    // ProfileComponent
   ],
   imports: [
     LayoutRoutingModule,

@@ -9,7 +9,15 @@ export class ProfileComponent implements OnInit {
 
   constructor() { }
 
+  dataUser: any;
+  log: any;
   ngOnInit(): void {
+    this.dataUser = 'Julieta García';
+    console.log( this.dataUser);
+    // tslint:disable-next-line:radix
+    this.log = parseInt(localStorage.getItem('LogState'));
+    console.log( this.log);
   }
+
 
 }

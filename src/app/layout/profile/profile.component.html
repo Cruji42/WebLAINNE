@@ -1,1 +1,72 @@
-<p>profile works!</p>
+<div class="center">
+  <div class="row">
+    <h3>𝒫𝒶𝓈𝓉𝑒𝓁𝑒𝓇í𝒶</h3>
+    <img src="../assets/img/Cake.png" class="logo">
+    <h3>𝐿𝒜𝐼𝒩𝒩𝐸</h3>
+  </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="home">INICIO<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="catalog">GALERIA</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="order">TIENDA</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="about">NOSOTROS</a>
+      </li>
+      <li class="nav-item dropdown " style="right: 2%; position: absolute" *ngIf="log === 1">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <img width="30px" height="30px" src="https:\\firebasestorage.googleapis.com\v0\b\lainne-c321f.appspot.com\o\avatar-placeholder.png?alt=media&token=10c6f845-849b-4b10-9fa4-427da8b8ac95">
+          {{dataUser}}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="right: 7.5%; position: absolute">
+          <a class="dropdown-item"  [routerLink]="['order/profile']">Perfil</a>
+          <a class="dropdown-item" href="#">Cerrar sesión</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div id="login" class="log_back" >
+  <div class="card">
+    <div class="card-body ">
+      <br>
+      <div id="login-row" class="row justify-content-center align-items-center">
+        <div id="login-column" class="col-md-6">
+          <div id="login-box" class="col-md-12">
+            <form id="login-form" class="form">
+
+              <h2 class="text-center text-info letter">𝒫𝒶𝓈𝓉𝑒𝓁𝑒𝓇í𝒶 𝐿𝒜𝐼𝒩𝒩𝐸</h2>
+              <h5 class="text-center text-info letter" style="font-family: 'Apple Color Emoji'; padding-top: 10px"> L O G I N</h5>
+              <div class="form-group" style="padding-top: 10px">
+                <label for="username" class="text-info letter">Correo:</label><br>
+                <input type="email" #email name="email" id="username" class="form-control"  >
+              </div>
+              <div class="form-group">
+                <label for="password"   class="text-info letter">Contraseña:</label><br>
+                <input type="password" #pass name="password" id="password" class="form-control">
+              </div>
+              <div class="form-group">
+                <input type="button" class="btn btn-info btn-md enter-button"  value="Entrar">
+              </div>
+              <p id="forgot-link " class="text-center ">
+                <span class="letter"> ¿Olvidaste tu contraseña? </span> <a href="forgot" class="text-info letter"  > Recuperar</a>
+              </p>
+              <p id="register-link " class="text-center ">
+                <span class="letter" > ¿Aun no tienes cuenta? </span> <a href="registrar" class="text-info letter"  > Registrate</a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
