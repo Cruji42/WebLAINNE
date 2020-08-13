@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { WsService} from '../services';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -6,17 +8,36 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
-  constructor() { }
-
   dataUser: any;
   log: any;
+  id = {id: null};
+  response: any;
+  constructor( public WS: WsService, public router: Router) {
+    this.GetUser();
+  }
+
+  GetUser(){
+    this.id.id = Number(localStorage.getItem('Id'));
+    this.WS.getUser(this.id).subscribe(data => {
+      this.response = data;
+      this.dataUser = this.response[0].Nombre;
+    }, error => {
+      console.log(error);
+    });
+  }
   ngOnInit(): void {
-    this.dataUser = 'Julieta García';
-    console.log( this.dataUser);
-    // tslint:disable-next-line:radix
-    this.log = parseInt(localStorage.getItem('LogState'));
-    console.log( this.log);
+    this.log = Number(localStorage.getItem('LogState'));
+  }
+  LogOut(){
+    localStorage.clear();
+    this.log = 0;
+    this.router.navigate(['home']);
+  }
+  LogIn(){
+    this.router.navigate(['login']);
+  }
+  Perfil(){
+    this.router.navigate(['profile']);
   }
 
 }

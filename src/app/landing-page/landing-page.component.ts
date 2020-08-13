@@ -21,6 +21,7 @@ getProducts(){
     // this.products = this.response.body[0];
     // console.log(this.response.body[0]);
     this.products = [this.response.body[0], this.response.body[1], this.response.body[2]];
+    console.log(this.response);
   }, error => {
     console.log(error);
   });

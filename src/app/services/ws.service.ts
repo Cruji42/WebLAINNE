@@ -22,5 +22,13 @@ export class WsService {
   CreateOrder(data){
     return this.http.post('http://localhost/LAINNE/index.php/ORDER', data);
   }
+  getUser(data){
+    return this.http.post('http://localhost/LAINNE/index.php/USER', data );
+    // return this.http.get('http://localhost/LAINNE/index.php/USER', data);
+  }
+  getOrders(data){
+    return this.http.post('http://localhost/LAINNE/index.php/ORDER', data );
+    // return this.http.get('http://localhost/LAINNE/index.php/USER', data);
+  }
 }
 

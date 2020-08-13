@@ -21,7 +21,7 @@
         <a class="nav-link" href="about">NOSOTROS</a>
       </li>
       <li class="nav-item"  *ngIf="log === 1">
-        <a class="nav-link" href="/">PEDIDOS</a>
+        <a class="nav-link" href="orders">PEDIDOS</a>
       </li>
         <li class="nav-item dropdown " style="right: 2%; position: absolute" *ngIf="log === 1">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -29,10 +29,13 @@
             {{dataUser}}
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="right: 7.5%; position: absolute">
-            <a class="dropdown-item"  [routerLink]="['profile']">Perfil</a>
-            <a class="dropdown-item" href="#">Cerrar sesión</a>
+            <a class="dropdown-item"  (click)="Perfil()">Perfil</a>
+            <a class="dropdown-item" (click)="LogOut()">Cerrar sesión</a>
           </div>
         </li>
+      <button  class="btn btn-md enter-button"  (click)="LogIn()" style="right: 2%; width: auto; position: absolute" *ngIf ="log != 1">
+        Iniciar Sesion
+      </button>
 
     </ul>
 
