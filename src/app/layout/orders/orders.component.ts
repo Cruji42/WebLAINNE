@@ -3,11 +3,11 @@ import { WsService} from '../../services';
 import { Router} from '@angular/router';
 
 @Component({
-  selector: 'app-cakemaker',
-  templateUrl: './cakemaker.component.html',
-  styleUrls: ['./cakemaker.component.css']
+  selector: 'app-orders',
+  templateUrl: './orders.component.html',
+  styleUrls: ['./orders.component.css']
 })
-export class CakemakerComponent implements OnInit {
+export class OrdersComponent implements OnInit {
   OrderData = {
     FechaEntrega: null,
     ClienteId: null,
