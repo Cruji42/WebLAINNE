@@ -23,4 +23,78 @@
     </ul>
   </div>
 </nav>
-<hr>
+<div id="login" class="log_back" >
+  <div class="card">
+    <div class="card-body ">
+      <br>
+      <div id="login-row" class="row justify-content-center align-items-center">
+       <img src="../../../assets/img/Chef.png">
+        <div id="login-column" class="col-md-6">
+          <div id="login-box" class="col-md-12">
+            <form id="login-form" class="form">
+
+              <div class="form-group" style="padding-top: 10px">
+                <label for="FechaEntrega" class="text-info letter">¿Cuando lo quieres?</label><br>
+                <input type="date" #FechaEntrega name="FechaEntrega" id="FechaEntrega" class="form-control"  >
+              </div>
+
+              <div class="form-group" style="padding-top: 10px">
+                <label for="cantidad" class="text-info letter">Cantidad:</label><br>
+                <input type="number" #cantidad name="cantidad" id="cantidad" class="form-control" min="1"  >
+              </div>
+
+              <div class="form-group" style="padding-top: 10px">
+                <label for="decoracion" class="text-info letter">Decoración:</label><br>
+                <input type="text" #decoracion name="decoracion" id="decoracion" class="form-control"  >
+              </div>
+
+              <div class="form-group" style="padding-top: 10px">
+                <label for="tamano" class="text-info letter">Tamaño:</label><br>
+                <!--<input type="text" #tamano name="tamano" id="tamano" class="form-control"  >-->
+                <select name="tamano" id="tamano" #tamano>
+                  <option value="Grande">Grande</option>
+                  <option value="Chico">Chico</option>
+                </select>
+              </div>
+
+              <div class="form-group" style="padding-top: 10px">
+                <label for="sabor" class="text-info letter">Sabor:</label><br>
+                <!--<input type="text" #sabor name="sabor" id="sabor" class="form-control"  >-->
+                <select name="sabor" id="sabor" #sabor>
+                  <option value="Chocolate">Chocolate</option>
+                  <option value="Marmoleado">Marmoleado</option>
+                  <option value="Clásico">Clásico</option>
+                </select>
+              </div>
+
+              <div class="form-group" style="padding-top: 10px">
+                <label for="relleno" class="text-info letter">Relleno:</label><br>
+                <!--<input type="text" #relleno name="relleno" id="relleno" class="form-control"  >-->
+                <select name="relleno" id="relleno" #relleno>
+                  <option value="Durazno">Durazno</option>
+                  <option value="Mermelada de Fresa">Mermelada de Fresa</option>
+                  <option value="Sin relleno">Sin relleno</option>
+                </select>
+              </div>
+
+              <div class="form-group" style="padding-top: 10px">
+                <label for="extra" class="text-info letter">Extra:</label><br>
+                <!--<input type="text" #extra name="extra" id="extra" class="form-control"  >-->
+                <select name="extra" id="extra" #extra>
+                  <option value="3 leches">3 Leches</option>
+                  <option value="Natural de Fresa">Natural</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <input type="button" class="btn btn-info btn-md enter-button" value="Ordenar"
+                       (click)="makeOrder(FechaEntrega.value, cantidad.value, decoracion.value, tamano.value, sabor.value, relleno.value, extra.value)">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

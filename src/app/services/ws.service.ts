@@ -19,5 +19,8 @@ export class WsService {
   ws_create(data){
     return this.http.post('http://localhost/LAINNE/index.php/USER', data);
   }
+  CreateOrder(data){
+    return this.http.post('http://localhost/LAINNE/index.php/ORDER', data);
+  }
 }
 

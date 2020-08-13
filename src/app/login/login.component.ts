@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
       this.data = response;
       if (this.data.success === 1){
         localStorage.setItem('token', this.data.token);
+        localStorage.setItem('Id', this.data.id);
         localStorage.setItem('LogState', '1');
         this.router.navigate(['order']);
       }else{
