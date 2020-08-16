@@ -39,9 +39,17 @@
   </div>
 </nav>
 <hr>
-<div class="center" *ngFor="let y of response2.length">
-  <img src="{{response2[y].Imagen}}">
-  <!--<h2>Seguimos trabajando en esta parte de tu página</h2>
-  <img src="../../../assets/img/work.png">-->
+<div class="row">
+
+    <div  class="card" *ngFor="let y of response2">
+     <img class="card-img-top" src="{{y.Imagen}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{y.Nombre}}</h5>
+        <p class="card-text">{{y.Descripcion}}</p>
+        <p class="card-subtitle"><span style="color: #0a0101">Entrega:</span> {{y.FechaEntrega}} </p>
+          <p class="card-subtitle"><span style="color: #0a0101">Estado:</span> {{y.Estado}}</p>
+      </div>
+  </div>
 </div>
+
 

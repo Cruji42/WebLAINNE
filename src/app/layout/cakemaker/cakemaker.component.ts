@@ -23,7 +23,13 @@ export class CakemakerComponent implements OnInit {
   log: any;
   dataUser: any;
   id = {id: null};
+  mes: any;
+  dia: any;
+  hora: any;
+  minutos: any;
+  fecha: any;
   response: any;
+  aux: any;
 
   constructor(public WS: WsService, public router: Router) {
     this.GetUser();
@@ -32,9 +38,67 @@ export class CakemakerComponent implements OnInit {
   ngOnInit(): void {
     this.log = Number(localStorage.getItem('LogState'));
   }
+  // tslint:disable-next-line:variable-name
+  Formato_fecha( fecha_hora ): void{
+    const valor = new Date(fecha_hora);
+    this.mes = valor.getMonth() + 1;
+    this.dia = valor.getDate();
+    this.hora = valor.getHours();
+    this.minutos = valor.getMinutes();
+
+    if(this.mes <= 9) {
+      this.mes = '0' + this.mes;
+    }
+
+    if ( this.dia <= 9){
+      this.dia = '0' + this.dia;
+    }
+
+    if( this.hora <= 9){
+      this.hora = '0' + this.hora;
+    }
+
+    if( this.minutos <= 9) {
+      this.minutos = '0' + this.minutos;
+    }
+/*    this.aux = 4;
+    while ( this.aux > 0) {
+      if (this.mes >= 10) {
+        if (this.dia >= 10) {
+          if (this.hora >= 10) {
+            if (this.minutos >= 10) {
+              this.fecha = valor.getFullYear() + "-" + this.mes + '-' + this.dia + " " + this.hora + ":" + this.minutos + ":00";
+              console.log(this.fecha + "    minutos ok");
+            } else if (this.minutos <= 9) {
+              this.minutos = "0" + this.minutos;
+              this.fecha = valor.getFullYear() + "-" + this.mes + '-' + this.dia + " " + this.hora + ":" + this.minutos + ":00"
+              console.log(this.fecha + "   minutos no");
+            }
+          } else if (this.hora <= 9) {
+            this.hora = '0' + this.hora;
+            this.fecha = valor.getFullYear() + "-" + this.mes + '-' + this.dia + " " + this.hora + ":" + this.minutos + ":00"
+            console.log(this.fecha + "    horas no");
+          }
+        } else if (this.dia <= 9) {
+          this.dia = '0' + this.dia;
+          this.fecha = valor.getFullYear() + "-" + this.mes + '-' + this.dia + " " + this.hora + ":" + this.minutos + ":00"
+          console.log(this.fecha + "    dias no");
+        }
+      } else if (valor.getMonth()) {
+        this.mes = '0' + this.mes;
+        this.fecha = valor.getFullYear() + "-" + this.mes + '-' + this.dia + " " + this.hora + ":" + this.minutos + ":00"
+        console.log(this.fecha + "    mes no  " + this.mes);
+      }
+      this.aux = this.aux - 1;
+    }*/
+
+    this.fecha = valor.getFullYear() + "-" + this.mes + '-' + this.dia + " " + this.hora + ":" + this.minutos + ":00";
+    console.log(this.fecha);
+    return this.fecha;
+  }
   makeOrder(FechaEntrega, cantidad, decoracion, tamano, sabor, relleno, extra ){
     this.OrderData.ClienteId = Number(localStorage.getItem('Id'));
-    this.OrderData.FechaEntrega = FechaEntrega;
+    this.OrderData.FechaEntrega = this.Formato_fecha(FechaEntrega);
     this.OrderData.ProductoCant = Number(cantidad);
     this.OrderData.ProductoDecoracion = decoracion;
     this.OrderData.ProductoTamano = tamano;

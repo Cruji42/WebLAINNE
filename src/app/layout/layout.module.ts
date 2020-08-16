@@ -3,6 +3,7 @@ import { ReactiveFormsModule, FormsModule} from '@angular/forms';
 import { LayoutComponent} from './layout.component';
 import { LayoutRoutingModule} from './layout-routing.module';
 import { ProfileComponent } from './profile/profile.component';
+import {CommonModule} from '@angular/common';
 
 
 
@@ -14,7 +15,8 @@ import { ProfileComponent } from './profile/profile.component';
   imports: [
     LayoutRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [LayoutComponent]

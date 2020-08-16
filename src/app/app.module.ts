@@ -31,7 +31,7 @@ import { ForgotComponent } from './forgot/forgot.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

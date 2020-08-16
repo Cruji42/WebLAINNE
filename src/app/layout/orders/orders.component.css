@@ -12,11 +12,12 @@
 .card{
   background-color: #FFFFFF;
   position: relative;
-  width: 70%;
-  left: 15%;
-  right: 15%;
+  width: 30%;
+  margin-left: 2.5%;
+  margin-top: 2%;
+  /*right: 15%;*/
   top: 10%;
-  border-radius: 50px;
+  border-radius: 10px;
 }
 
 .log_back{
@@ -31,10 +32,13 @@
 }
 
 .card img {
-  width: 50%;
+  width: 100%;
   height: auto;
-  padding-left: 5%;
-  padding-top: 10%;
+}
+
+.card-subtitle{
+  color: #D762CF;
+  font-size: 14px;
 }
 
 .Inputs {
