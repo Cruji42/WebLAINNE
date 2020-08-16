@@ -12,8 +12,9 @@ import { WsService} from '../services';
 export class RegistrarComponent implements OnInit {
   public formRegistrar: FormGroup;
   response: any;
+  user = {Name: '', LastName: '', Telephone: '', Address: '', City: '', Mail: '', Password: ''};
   constructor(private formBuilder: FormBuilder, public ws: WsService, public router: Router) {
-  this.formulario();
+  // this.formulario();
   }
 
   ngOnInit(): void {
@@ -21,20 +22,26 @@ export class RegistrarComponent implements OnInit {
 
   formulario(){
     this.formRegistrar = this.formBuilder.group({
-      Name: [ '', Validators.required],
-      LastName: [ '', Validators.required],
-      Telephone: [ '', Validators.required],
-      Address: [ '', Validators.required],
-      City: [ '', Validators.required],
-      Mail: [ '', Validators.required],
-      Password: ['', Validators.required]
+      nombre: [ '', Validators.required],
+      apellido: [ '', Validators.required],
+      telefono: [ '', Validators.required],
+      direccion: [ '', Validators.required],
+      ciudad: [ '', Validators.required],
+      correo: [ '', Validators.required],
+      contrasena: ['', Validators.required]
     });
   }
 
-  registrar_usuario(){
-    const provider = this.formRegistrar.value;
-    console.log(provider);
-    this.ws.ws_create(provider).subscribe(data => {
+  registrar_usuario(nombre, apellido, telefono, direccion, ciudad, correo, contrasena){
+    this.user.Name = nombre;
+    this.user.LastName = apellido;
+    this.user.Telephone = telefono;
+    this.user.Address = direccion;
+    this.user.City = ciudad;
+    this.user.Mail = correo;
+    this.user.Password = contrasena;
+    console.log(this.user);
+    this.ws.ws_create(this.user).subscribe(data => {
       this.response = data;
       console.log(this.response.status_code_header);
       if (this.response.status_code_header === 'HTTP/1.1 201 Created'){

@@ -11,10 +11,11 @@ export class OrdersComponent implements OnInit {
   data: any;
   log: any;
   dataUser: any;
-  dataOrder = [];
+  dataOrder: any;
   id = {id: null};
   response: any;
   response2: any;
+  products: any;
 
   constructor(public WS: WsService, public router: Router) {
   }
@@ -32,7 +33,7 @@ export class OrdersComponent implements OnInit {
       console.log(error);
     });
   }
-  GetOrders(){
+  /*GetOrders(){
     this.id.id = Number(localStorage.getItem('Id'));
     this.WS.getOrders(this.id).subscribe(data => {
       this.response2 = data;
@@ -41,7 +42,7 @@ export class OrdersComponent implements OnInit {
       }, error => {
       console.log(error);
     });
-  }
+  }*/
   LogOut(){
     localStorage.clear();
     this.router.navigate(['home']);
@@ -51,6 +52,14 @@ export class OrdersComponent implements OnInit {
   }
   goOrders(){
     this.router.navigate(['orders']);
+  }
+  GetOrders(){
+    this.WS.getOrders(this.id).subscribe(data => {
+      this.response2 = data;
+      console.log(this.response2);
+    }, error => {
+      console.log(error);
+    });
   }
 
 

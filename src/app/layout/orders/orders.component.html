@@ -39,13 +39,9 @@
   </div>
 </nav>
 <hr>
-<div class="container">
-<div class="card" style="width: 18rem;">
-  <img src="{{dataOrder[0].Imagen}}" class="card-img-top">
-  <div class="card-body">
-    <h5 class="card-title">{{dataOrder[0].Nombre}}</h5>
-    <p class="card-text">{{dataOrder[0].Descripcion}}</p>
-    <p class="card-text">{{dataOrder[0].Estado}}</p>
-  </div>
+<div class="center" *ngFor="let y of response2">
+  <p>{{y.Nombre}}</p>
+  <!--<h2>Seguimos trabajando en esta parte de tu página</h2>
+  <img src="../../../assets/img/work.png">-->
 </div>
-</div>
+
