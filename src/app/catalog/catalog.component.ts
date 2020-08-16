@@ -19,7 +19,7 @@ export class CatalogComponent implements OnInit {
   getProducts(){
     this.WS.Get_Products().subscribe(data => {
       this.response = data;
-      this.products = this.response.body;
+      this.products = this.response;
       console.log(this.products);
     }, error => {
       console.log(error);
