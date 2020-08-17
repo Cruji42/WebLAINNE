@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WsService} from '../../services';
 import { Router} from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-orders',
@@ -13,6 +14,8 @@ export class OrdersComponent implements OnInit {
   dataUser: any;
   dataOrder: any;
   id = {id: null};
+  // tslint:disable-next-line:variable-name
+  id_O = {id_order: null};
   response: any;
   response2: any;
   products: any;
@@ -61,6 +64,45 @@ export class OrdersComponent implements OnInit {
       console.log(error);
     });
   }
+
+  // tslint:disable-next-line:variable-name
+  eliminar( id ){
+    this.id_O.id_order = Number(id);
+    Swal.fire({
+      title: 'Cancelar pedido',
+      text: '¿Estas seguro de que deseas cancelar tu pedido?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#EC9EB1',
+      cancelButtonColor: '#D762CF',
+      confirmButtonText: 'Si'
+    }).then((result) => {
+      if (result.value) {
+        this.WS.DeleteOrder(this.id_O ).subscribe((data: any) => {
+            console.log(data);
+            if(data.body === 'ok'){
+              Swal.fire({
+                title: '¡Cancelado!',
+                text: 'Tu pedido ha sido cancelado',
+                icon: 'success',
+                confirmButtonColor: '#EC9EB1',
+              });
+              this.GetOrders();
+            } else {
+              Swal.fire({
+                title: 'Error',
+                text: 'Tu pedido no pudo ser cancelado, favor de intentarlo más tarde',
+                icon: 'success',
+                confirmButtonColor: '#EC9EB1',
+              });
+            }
+        });
+
+      }
+    });
+  }
+
+
 
 
 }

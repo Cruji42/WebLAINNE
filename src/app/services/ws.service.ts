@@ -30,5 +30,9 @@ export class WsService {
     return this.http.post('http://localhost/LAINNE/index.php/ORDER', data );
     // return this.http.get('http://localhost/LAINNE/index.php/USER', data);
   }
+
+  DeleteOrder(data){
+    return this.http.post( 'http://localhost/LAINNE/index.php/ORDER', data);
+  }
 }
 

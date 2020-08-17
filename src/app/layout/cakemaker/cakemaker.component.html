@@ -48,59 +48,88 @@
        <img src="../../../assets/img/Chef.png">
         <div id="login-column" class="col-md-6">
           <div id="login-box" class="col-md-12">
-            <form id="login-form" class="form">
+            <form id="login-form" class="form" [formGroup]="registerForm" >
 
               <div class="form-group" style="padding-top: 10px">
                 <label for="FechaEntrega" class="text-info letter">¿Cuando lo quieres?</label><br>
-                <input type="datetime-local"  #FechaEntrega name="FechaEntrega" id="FechaEntrega" class="form-control"  >
+                <input type="datetime-local" formControlName="fecha" #FechaEntrega id="FechaEntrega" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fecha.errors }">
+                <div *ngIf="submitted && f.fecha.errors" class="invalid-feedback">
+                  <div *ngIf="f.fecha.errors.required">La fecha es requerida</div>
+                  <div *ngIf="fecha_not">Formato de fecha incorrecto</div>
+                  <!--                  <div *ngIf="f.nombre.errors">Formato de email invalido</div>-->
+                </div>
               </div>
 
               <div class="form-group" style="padding-top: 10px">
                 <label for="cantidad" class="text-info letter">Cantidad:</label><br>
-                <input type="number" #cantidad name="cantidad" id="cantidad" class="form-control" min="1" >
+                <input type="number" formControlName="cantidad" #cantidad id="cantidad" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cantidad.errors }">
+                <div *ngIf="submitted && f.cantidad.errors" class="invalid-feedback">
+                  <div *ngIf="f.cantidad.errors.required">La cantidad es requerida</div>
+                  <!--                  <div *ngIf="f.nombre.errors">Formato de email invalido</div>-->
+                </div>
               </div>
 
               <div class="form-group" style="padding-top: 10px">
                 <label for="decoracion" class="text-info letter">Decoración:</label><br>
-                <input type="text" #decoracion name="decoracion" id="decoracion" class="form-control"  >
+                <input type="text" formControlName="decoracion" #decoracion id="decoracion" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.decoracion.errors }">
+                <div *ngIf="submitted && f.decoracion.errors" class="invalid-feedback">
+                  <div *ngIf="f.decoracion.errors.required">La decoración es requerida</div>
+                  <!--                  <div *ngIf="f.nombre.errors">Formato de email invalido</div>-->
+                </div>
               </div>
 
               <div class="form-group" style="padding-top: 10px">
                 <label for="tamano" class="text-info letter">Tamaño:</label><br>
                 <!--<input type="text" #tamano name="tamano" id="tamano" class="form-control"  >-->
-                <select name="tamano" id="tamano" #tamano>
+                <select name="tamano" id="tamano" #tamano  formControlName="tamano" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.tamano.errors } ">
                   <option value="Grande">Grande (Unico tamaño disponible por el momento)</option>
                   <!--<option value="Chico">Chico</option>-->
                 </select>
+                <div *ngIf="submitted && f.tamano.errors" class="invalid-feedback">
+                  <div *ngIf="f.tamano.errors.required">El tamaño es requerido</div>
+                  <!--                  <div *ngIf="f.nombre.errors">Formato de email invalido</div>-->
+                </div>
               </div>
 
               <div class="form-group" style="padding-top: 10px">
                 <label for="sabor" class="text-info letter">Sabor:</label><br>
                 <!--<input type="text" #sabor name="sabor" id="sabor" class="form-control"  >-->
-                <select name="sabor" id="sabor" #sabor>
+                <select name="sabor" id="sabor" #sabor formControlName="sabor" class="form-control"  [ngClass]="{ 'is-invalid': submitted && f.sabor.errors } ">
                   <option value="Chocolate">Chocolate</option>
                   <!--<option value="Marmoleado">Marmoleado</option>-->
                   <option value="Clásico">Clásico</option>
                 </select>
+                <div *ngIf="submitted && f.sabor.errors" class="invalid-feedback">
+                  <div *ngIf="f.sabor.errors.required">El sabor es requerido</div>
+                  <!--                  <div *ngIf="f.nombre.errors">Formato de email invalido</div>-->
+                </div>
               </div>
 
               <div class="form-group" style="padding-top: 10px">
                 <label for="relleno" class="text-info letter">Relleno:</label><br>
                 <!--<input type="text" #relleno name="relleno" id="relleno" class="form-control"  >-->
-                <select name="relleno" id="relleno" #relleno>
+                <select name="relleno" id="relleno" #relleno formControlName="relleno" class="form-control"  [ngClass]="{ 'is-invalid': submitted && f.relleno.errors } ">
                   <option value="Durazno">Durazno</option>
                   <option value="Mermelada de Fresa">Mermelada de Fresa</option>
                   <option value="Sin relleno">Sin relleno</option>
                 </select>
+                <div *ngIf="submitted && f.relleno.errors" class="invalid-feedback">
+                  <div *ngIf="f.relleno.errors.required">El relleno es requerida</div>
+                  <!--                  <div *ngIf="f.nombre.errors">Formato de email invalido</div>-->
+                </div>
               </div>
 
               <div class="form-group" style="padding-top: 10px">
                 <label for="extra" class="text-info letter">Extra:</label><br>
                 <!--<input type="text" #extra name="extra" id="extra" class="form-control"  >-->
-                <select name="extra" id="extra" #extra>
+                <select name="extra" id="extra" #extra formControlName="extra" class="form-control"  [ngClass]="{ 'is-invalid': submitted && f.extra.errors } ">
                   <option value="3 leches">3 Leches</option>
                   <option value="Natural">Natural</option>
                 </select>
+                <div *ngIf="submitted && f.extra.errors" class="invalid-feedback">
+                  <div *ngIf="f.extra.errors.required">Extras es requerida</div>
+                  <!--                  <div *ngIf="f.nombre.errors">Formato de email invalido</div>-->
+                </div>
               </div>
 
               <div class="form-group">

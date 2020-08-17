@@ -48,6 +48,10 @@
         <p class="card-text">{{y.Descripcion}}</p>
         <p class="card-subtitle"><span style="color: #0a0101">Entrega:</span> {{y.FechaEntrega}} </p>
           <p class="card-subtitle"><span style="color: #0a0101">Estado:</span> {{y.Estado}}</p>
+
+      </div>
+      <div class="card-footer">
+        <a type="button" (click)="eliminar(y.Id)" class="btn btn-info btn-md enter-button">Eliminar orden</a>
       </div>
   </div>
 </div>
