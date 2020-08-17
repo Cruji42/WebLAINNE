@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WsService} from '../../services';
 import { Router} from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cakemaker',
@@ -61,36 +62,6 @@ export class CakemakerComponent implements OnInit {
     if( this.minutos <= 9) {
       this.minutos = '0' + this.minutos;
     }
-/*    this.aux = 4;
-    while ( this.aux > 0) {
-      if (this.mes >= 10) {
-        if (this.dia >= 10) {
-          if (this.hora >= 10) {
-            if (this.minutos >= 10) {
-              this.fecha = valor.getFullYear() + "-" + this.mes + '-' + this.dia + " " + this.hora + ":" + this.minutos + ":00";
-              console.log(this.fecha + "    minutos ok");
-            } else if (this.minutos <= 9) {
-              this.minutos = "0" + this.minutos;
-              this.fecha = valor.getFullYear() + "-" + this.mes + '-' + this.dia + " " + this.hora + ":" + this.minutos + ":00"
-              console.log(this.fecha + "   minutos no");
-            }
-          } else if (this.hora <= 9) {
-            this.hora = '0' + this.hora;
-            this.fecha = valor.getFullYear() + "-" + this.mes + '-' + this.dia + " " + this.hora + ":" + this.minutos + ":00"
-            console.log(this.fecha + "    horas no");
-          }
-        } else if (this.dia <= 9) {
-          this.dia = '0' + this.dia;
-          this.fecha = valor.getFullYear() + "-" + this.mes + '-' + this.dia + " " + this.hora + ":" + this.minutos + ":00"
-          console.log(this.fecha + "    dias no");
-        }
-      } else if (valor.getMonth()) {
-        this.mes = '0' + this.mes;
-        this.fecha = valor.getFullYear() + "-" + this.mes + '-' + this.dia + " " + this.hora + ":" + this.minutos + ":00"
-        console.log(this.fecha + "    mes no  " + this.mes);
-      }
-      this.aux = this.aux - 1;
-    }*/
 
     this.fecha = valor.getFullYear() + "-" + this.mes + '-' + this.dia + " " + this.hora + ":" + this.minutos + ":00";
     console.log(this.fecha);
@@ -108,7 +79,11 @@ export class CakemakerComponent implements OnInit {
     this.WS.CreateOrder(this.OrderData).subscribe(response => {
       this.data = response;
       console.log(this.data);
-      alert('Pedido realizado');
+      Swal.fire({
+        title: 'Exitoso',
+        text: 'Tu pedido fue registrado y enviado',
+        icon: 'success',
+      });
       this.router.navigate(['home']);
     });
   }

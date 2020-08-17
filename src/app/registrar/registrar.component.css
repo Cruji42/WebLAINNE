@@ -1,23 +1,25 @@
 .card{
   background-color: #FFFFFF;
-  position: fixed;
-  left: 10%;
-  right: 10%;
-  bottom: 10%;
-  top: 10%;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 5%;
+  /*position: fixed;*/
+  /*left: 10%;*/
+  /*right: 10%;*/
+  /*bottom: 10%;*/
+  /*top: 10%;*/
   border-radius: 50px;
+
 }
 
 .log_back{
+  overflow: scroll;
   position: absolute;
   width: 100% !important;
   /*border-radius: 10px;*/
   height: 100% !important;
   /* The image used */
   background-image: url("../../assets/img/login_pastel.jpg");
-  /*background-color: pink;*/
-  filter: blur(8px);
-  -webkit-filter: blur(8px);
   opacity: 0.8;
 
 
@@ -89,7 +91,7 @@ button[type=button] {
 }
 
 .letter{
-  color: rgb(255, 255, 255) !important;
+  color: #D762CF !important;
 }
 .enter-button{
   width: 100%;

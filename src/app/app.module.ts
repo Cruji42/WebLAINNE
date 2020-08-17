@@ -13,6 +13,7 @@ import { FormsModule} from '@angular/forms';
 import { AboutComponent } from './about/about.component';
 import { RegistrarComponent } from './registrar/registrar.component';
 import { ForgotComponent } from './forgot/forgot.component';
+import {LoginComponent} from './login/login.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { ForgotComponent } from './forgot/forgot.component';
     CatalogComponent,
     AboutComponent,
     RegistrarComponent,
-    ForgotComponent
+    ForgotComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
