@@ -58,7 +58,7 @@ export class CakemakerComponent implements OnInit {
   Formato_fecha( fecha_hora ): void{
     const valor = new Date(fecha_hora);
     console.log( valor);
-    if ('Invalid Date' === valor){
+    if ('Invalid Date' === (String(valor))){
         this.fecha_not = false;
         if (this.registerForm.invalid) {
         return;
@@ -110,12 +110,21 @@ export class CakemakerComponent implements OnInit {
     this.WS.CreateOrder(this.OrderData).subscribe(response => {
       this.data = response;
       console.log(this.data);
-      Swal.fire({
-        title: 'Exitoso',
-        text: 'Tu pedido fue registrado y enviado',
-        icon: 'success',
-      });
-      this.router.navigate(['home']);
+      if( this.data.status_code_header === 'HTTP/1.1 422 Unprocessable Entity'){
+        Swal.fire({
+          title: 'Error',
+          text: 'La fecha no cumple con el formato',
+          icon: 'error',
+        });
+      } else {
+        Swal.fire({
+          title: 'Exitoso',
+          text: 'Tu pedido fue registrado y enviado',
+          icon: 'success',
+        });
+        this.router.navigate(['home']);
+      }
+
     });
   }
   GetUser(){
