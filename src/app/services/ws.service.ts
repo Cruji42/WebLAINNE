@@ -34,5 +34,9 @@ export class WsService {
   DeleteOrder(data){
     return this.http.post( 'http://localhost/LAINNE/index.php/ORDER', data);
   }
+
+  Forgot(data){
+    return this.http.post( 'http://localhost/LAINNE/Login.php', data);
+  }
 }
 

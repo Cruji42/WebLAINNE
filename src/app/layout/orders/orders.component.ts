@@ -18,6 +18,7 @@ export class OrdersComponent implements OnInit {
   id_O = {id_order: null};
   response: any;
   response2: any;
+  response2_M: any = [];
   products: any;
 
   constructor(public WS: WsService, public router: Router) {
@@ -59,7 +60,14 @@ export class OrdersComponent implements OnInit {
   GetOrders(){
     this.WS.getOrders(this.id).subscribe(data => {
       this.response2 = data;
-      console.log(this.response2);
+      console.log(data);
+      for (let i = 0; i < this.response2.length; i++){
+        if (i < (this.response2.length - 1)) {
+          this.response2_M[i] = this.response2[i + 1];
+        }
+      }
+      console.log(this.response2_M);
+      console.log(this.response2_M);
     }, error => {
       console.log(error);
     });
@@ -87,7 +95,8 @@ export class OrdersComponent implements OnInit {
                 icon: 'success',
                 confirmButtonColor: '#EC9EB1',
               });
-              this.GetOrders();
+              // this.GetOrders();
+              location.reload();
             } else {
               Swal.fire({
                 title: 'Error',
